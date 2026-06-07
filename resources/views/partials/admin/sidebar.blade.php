@@ -1,3 +1,15 @@
+@php
+    // Sidebar active-state helper. Defined here (guarded) so it is always
+    // available when the sidebar renders, independent of provider boot or
+    // Octane worker state. Usage: class="{{ nav_active(['admin.users.*']) }}"
+    if (! function_exists('nav_active')) {
+        function nav_active(array $patterns, string $class = 'active'): string
+        {
+            return request()->routeIs(...$patterns) ? $class : '';
+        }
+    }
+@endphp
+
 {{-- Sidenav Menu Start --}}
 {{-- nav_active() helper is registered in App\Providers\AppServiceProvider --}}
 <div class="two-col-sidebar" id="two-col-sidebar">
@@ -60,6 +72,18 @@
                                     <i class="isax isax-element-45"></i><span>Dashboard</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{ Route::has('admin.dashboard.kpi') ? route('admin.dashboard.kpi') : url('/dashboard-kpi') }}"
+                                    class="{{ nav_active(['admin.dashboard.kpi']) }}">
+                                    <i class="isax isax-chart-21"></i><span>KPI Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ Route::has('admin.dashboard.trend') ? route('admin.dashboard.trend') : url('/dashboard-trend') }}"
+                                    class="{{ nav_active(['admin.dashboard.trend']) }}">
+                                    <i class="isax isax-trend-up"></i><span>Trend Penjualan</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
@@ -96,19 +120,7 @@
                     </li>
                 </ul>
 
-                <div class="sidebar-footer">
-                    <div class="trial-item bg-white text-center border">
-                        <div class="bg-light p-3 text-center">
-                            <img src="{{ asset('assets/img/icons/upgrade.svg') }}" alt="img">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="fs-14 fw-semibold mb-1">Upgrade to More</h6>
-                            <p class="fs-13 mb-2">Subscribe to get more with Premium Features</p>
-                            <a href="javascript:void(0);" class="btn btn-sm btn-primary w-100 d-flex align-items-center justify-content-center"><i class="isax isax-crown5 me-1"></i>Upgrade</a>
-                        </div>
-                        <a href="javascript:void(0);" class="close-icon"><i class="fa-solid fa-x"></i></a>
-                    </div>
-                </div>
+        
             </div>
         </div>
     </div>

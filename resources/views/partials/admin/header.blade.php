@@ -37,7 +37,7 @@
                 <div class="d-flex align-items-center">
 
                     {{-- Language Dropdown --}}
-                    <div class="nav-item dropdown has-arrow flag-nav me-2">
+                    {{-- <div class="nav-item dropdown has-arrow flag-nav me-2">
                         <a class="btn btn-menubar" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">
                             <img src="{{ asset('assets/img/flags/us.svg') }}" alt="Language" class="img-fluid">
                         </a>
@@ -47,10 +47,10 @@
                             <li><a href="javascript:void(0);" class="dropdown-item"><img src="{{ asset('assets/img/flags/fr.svg') }}" alt="flag" class="me-2">French</a></li>
                             <li><a href="javascript:void(0);" class="dropdown-item"><img src="{{ asset('assets/img/flags/ae.svg') }}" alt="flag" class="me-2">Arabic</a></li>
                         </ul>
-                    </div>
+                    </div> --}}
 
                     {{-- Notification --}}
-                    <div class="notification_item me-2">
+                    {{-- <div class="notification_item me-2">
                         <a href="#" class="btn btn-menubar position-relative" id="notification_popup" data-bs-toggle="dropdown" data-bs-auto-close="outside">
                             <i class="isax isax-notification-bing5"></i>
                             <span class="position-absolute badge bg-success border border-white"></span>
@@ -94,7 +94,7 @@
                                 <a href="javascript:void(0);" class="text-center fw-medium fs-14 mb-0">View All</a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     {{-- Light/Dark Mode Button --}}
                     <div class="me-2 theme-item">

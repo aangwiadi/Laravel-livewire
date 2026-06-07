@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard')
-@section('page_title', 'Dashboard')
+@section('title', 'Trend Penjualan')
+@section('page_title', 'Trend Penjualan')
 
 @section('breadcrumb')
     <li class="breadcrumb-item d-flex align-items-center"><a href="{{ url('/') }}"><i class="isax isax-home-2 me-1"></i>Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+    <li class="breadcrumb-item active" aria-current="page">Trend Penjualan</li>
 @endsection
 
 @section('page_actions')
@@ -18,7 +18,7 @@
 @section('content')
     <div class="row">
         <div class="col-12">
-            @livewire('top-products-chart')
+            @livewire('sales-trend-chart')
         </div>
     </div>
 @endsection
@@ -53,8 +53,7 @@
                 }
             }, function (s, e) {
                 setLabel(s, e);
-                // Push the chosen range to the Livewire dashboard component.
-                Livewire.dispatch('dashboard-range-changed', {
+                Livewire.dispatch('trend-range-changed', {
                     start: s.format(fmt),
                     end: e.format(fmt),
                 });
