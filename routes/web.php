@@ -1,14 +1,19 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('layouts.admin');
-});
-Route::get('/login', function () {
-    return view('admin.login');
+// Guest routes
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
+    Route::post('/login', [LoginController::class, 'login'])->name('login.attempt');
 });
 
-Route::get('/info', function () {
-    dd(phpinfo());
+// Authenticated routes
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
 });

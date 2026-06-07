@@ -19,6 +19,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Sidebar active-state helper used by the admin layout.
+        // Usage in Blade: class="{{ nav_active(['admin.users.*']) }}"
+        if (! function_exists('nav_active')) {
+            function nav_active(array $patterns, string $class = 'active'): string
+            {
+                return request()->routeIs(...$patterns) ? $class : '';
+            }
+        }
     }
 }
