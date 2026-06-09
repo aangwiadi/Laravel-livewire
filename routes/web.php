@@ -27,3 +27,7 @@ Route::get('/dashboard-kpi', function () {
 Route::get('/dashboard-trend', function () {
     return view('admin.dashboard-trend');
 })->name('admin.dashboard.trend');
+
+Route::get('/dashboard-stok-alert', function () {
+    return view('admin.dashboard-stok-alert');
+})->name('admin.dashboard.stok-alert');

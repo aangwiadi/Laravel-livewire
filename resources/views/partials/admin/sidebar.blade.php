@@ -29,16 +29,16 @@
         {{-- Start Logo --}}
         <div class="sidebar-logo">
             <a href="{{ url('/') }}" class="logo logo-normal">
-                <img src="{{ asset('assets/img/logo.svg') }}" alt="Logo">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="Logo">
             </a>
             <a href="{{ url('/') }}" class="logo-small">
-                <img src="{{ asset('assets/img/logo-small.svg') }}" alt="Logo">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="Logo">
             </a>
             <a href="{{ url('/') }}" class="dark-logo">
-                <img src="{{ asset('assets/img/logo-white.svg') }}" alt="Logo">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="Logo">
             </a>
             <a href="{{ url('/') }}" class="dark-small">
-                <img src="{{ asset('assets/img/logo-small-white.svg') }}" alt="Logo">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="Logo">
             </a>
 
             {{-- Sidebar Hover Menu Toggle Button --}}
@@ -82,6 +82,12 @@
                                 <a href="{{ Route::has('admin.dashboard.trend') ? route('admin.dashboard.trend') : url('/dashboard-trend') }}"
                                     class="{{ nav_active(['admin.dashboard.trend']) }}">
                                     <i class="isax isax-trend-up"></i><span>Trend Penjualan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ Route::has('admin.dashboard.stok-alert') ? route('admin.dashboard.stok-alert') : url('/dashboard-stok-alert') }}"
+                                    class="{{ nav_active(['admin.dashboard.stok-alert']) }}">
+                                    <i class="isax isax-box-15"></i><span>Stock Alert</span>
                                 </a>
                             </li>
                         </ul>

@@ -7,467 +7,467 @@ document.querySelector("html").setAttribute('data-layout', localStorage.getItem(
 document.querySelector("html").setAttribute('data-size', localStorage.getItem('size') || 'default');
 document.querySelector("html").setAttribute('data-width', localStorage.getItem('width') || 'fluid');
 
-let themesettings = `
-<div class="sidebar-contact ">
-    <div class="toggle-theme"  data-bs-toggle="offcanvas" data-bs-target="#theme-setting">
-        <i class="fa-solid fa-gear ti-spin"></i></div>
-    </div>
-    <div class="sidebar-themesettings offcanvas offcanvas-end" id="theme-setting">
-    <div class="offcanvas-header d-flex align-items-center justify-content-between bg-primary">
-        <div>
-            <h6 class="text-white mb-0">Theme Customizer</h6>
-        </div>
-        <a href="#" class="close d-flex align-items-center justify-content-center"  data-bs-dismiss="offcanvas"><i class="isax isax-close-circle"></i></a>
-    </div>
-    <div class="themesettings-inner offcanvas-body">
-        <div class="accordion accordion-customicon1 accordions-items-seperate" id="settingtheme">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#layoutsetting" aria-expanded="true" aria-controls="collapsecustomicon1One">
-                        Select Layouts <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
-                    </button>
-                </h2>
-                <div id="layoutsetting" class="accordion-collapse collapse show">
-                    <div class="accordion-body">
-                     <div class="theme-content">
-                        <div class="row gx-3">
-                            <div class="col-4">
-                                <div class="theme-layout mb-3">
-                                    <input type="radio" name="LayoutTheme" id="defaultLayout" value="default" checked>
-                                    <label for="defaultLayout">
-                                        <span class="d-block mb-2 layout-img">
-                                            <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                            <img src="assets/img/theme/default.svg" alt="img">
-                                        </span>                                     
-                                        <span class="layout-type">Default</span>
-                                    </label>
-                                </div>
-                            </div>
-                             <div class="col-4">
-                                <div class="theme-layout mb-3">
-                                    <input type="radio" name="LayoutTheme" id="singleLayout" value="single">
-                                    <label for="singleLayout">
-                                        <span class="d-block mb-2 layout-img">
-                                        <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                            <img src="assets/img/theme/single.svg" alt="img">
-                                        </span>                                    
-                                        <span class="layout-type">Single</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="theme-layout mb-3">
-                                    <input type="radio" name="LayoutTheme" id="miniLayout" value="mini">
-                                    <label for="miniLayout">
-                                        <span class="d-block mb-2 layout-img">
-                                        <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                            <img src="assets/img/theme/mini.svg" alt="img">
-                                        </span>                                    
-                                        <span class="layout-type">Mini</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="theme-layout mb-3">
-                                    <input type="radio" name="LayoutTheme" id="transparentLayout" value="transparent">
-                                    <label for="transparentLayout">
-                                        <span class="d-block mb-2 layout-img">
-                                        <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                            <img src="assets/img/theme/transparent.svg" alt="img">
-                                        </span>                                    
-                                        <span class="layout-type">Transparent</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="theme-layout mb-3">
-                                    <input type="radio" name="LayoutTheme" id="without-headerLayout" value="without-header">
-                                    <label for="without-headerLayout">
-                                        <span class="d-block mb-2 layout-img">
-                                        <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                            <img src="assets/img/theme/without-header.svg" alt="img">
-                                        </span>                                    
-                                        <span class="layout-type">Without Header</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <a href="layout-rtl.html" class="theme-layout mb-3 text-center">
-                                    <span class="d-block mb-2 layout-img">
-                                        <img src="assets/img/theme/rtl.svg" alt="img">
-                                    </span>                                    
-                                    <span class="layout-type d-block">RTL</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div> 
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarsetting" aria-expanded="true">
-                        Layout Width <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
-                    </button>
-                </h2>
-                <div id="sidebarsetting" class="accordion-collapse collapse show">
-                    <div class="accordion-body">
-                      <div class="theme-content">
-                        <div class="d-flex align-items-center">
-                            <div class="theme-width m-1 me-2">
-                                <input type="radio" name="width" id="fluidWidth" value="fluid" checked>
-                                <label for="fluidWidth" class="d-flex align-items-center rounded fs-12"><i class="isax isax-row-vertical me-1"></i>Fluid Layout
-                                </label>
-                            </div>
-                            <div class="theme-width m-1">
-                                <input type="radio" name="width" id="boxWidth" value="box">
-                                <label for="boxWidth" class="d-flex align-items-center rounded fs-12"><i class="isax isax-slider-vertical me-1"></i>Boxed Layout
-                                </label>
-                            </div>
-                        </div>  
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarcolorsetting" aria-expanded="true">
-                        Sidebar Color <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
-                    </button>
-                </h2>
-                <div id="sidebarcolorsetting" class="accordion-collapse collapse show">
-                    <div class="accordion-body">
-                     <div class="theme-content">
-                     <h6 class="fs-14 fw-medium mb-2">Solid Colors</h6>
-                       <div class="d-flex align-items-center flex-wrap">
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="lightSidebar" value="light" checked>
-                                <label for="lightSidebar" class="d-block rounded mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="sidebar2Sidebar" value="sidebar2">
-                                <label for="sidebar2Sidebar" class="d-block rounded bg-white mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="sidebar3Sidebar" value="sidebar3">
-                                <label for="sidebar3Sidebar" class="d-block rounded bg-dark mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="sidebar4Sidebar" value="sidebar4">
-                                <label for="sidebar4Sidebar" class="d-block rounded bg-primary mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="sidebar5Sidebar" value="sidebar5">
-                                <label for="sidebar5Sidebar" class="d-block rounded bg-secondary mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="sidebar6Sidebar" value="sidebar6">
-                                <label for="sidebar6Sidebar" class="d-block rounded bg-info mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>    
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="sidebar7Sidebar" value="sidebar7">
-                                <label for="sidebar7Sidebar" class="d-block rounded bg-success mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>      
-                        </div>
-                        <h6 class="fs-14 fw-medium mb-2">Gradient Colors</h6>
-                       <div class="d-flex align-items-center flex-wrap">
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="gradientsidebar1Sidebar" value="gradientsidebar1">
-                                <label for="gradientsidebar1Sidebar" class="d-block rounded bg-primary bg-gradient mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="gradientsidebar2Sidebar" value="gradientsidebar2">
-                                <label for="gradientsidebar2Sidebar" class="d-block rounded bg-secondary bg-gradient mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="gradientsidebar3Sidebar" value="gradientsidebar3">
-                                <label for="gradientsidebar3Sidebar" class="d-block rounded bg-success bg-gradient mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="gradientsidebar4Sidebar" value="gradientsidebar4">
-                                <label for="gradientsidebar4Sidebar" class="d-block rounded bg-info bg-gradient mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="gradientsidebar5Sidebar" value="gradientsidebar5">
-                                <label for="gradientsidebar5Sidebar" class="d-block rounded bg-dark bg-gradient mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect m-1 me-2">
-                                <input type="radio" name="sidebar" id="gradientsidebar6Sidebar" value="gradientsidebar6">
-                                <label for="gradientsidebar6Sidebar" class="d-block rounded bg-danger bg-gradient mb-2">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>    
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>    
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#sizesetting" aria-expanded="true" aria-controls="collapsecustomicon1One">
-                        Sidebar Size <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
-                    </button>
-                </h2>
-                <div id="sizesetting" class="accordion-collapse collapse show">
-                    <div class="accordion-body pb-0">
-                     <div class="theme-content">
-                        <div class="row gx-3">
-                            <div class="col-4">
-                                <div class="theme-layout mb-3">
-                                    <input type="radio" name="size" id="defaultSize" value="default" checked>
-                                    <label for="defaultSize">
-                                        <span class="d-block mb-2 layout-img">
-                                        <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                            <img src="assets/img/theme/default.svg" alt="img">
-                                        </span>                                     
-                                        <span class="layout-type">Default</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="theme-layout mb-3">
-                                    <input type="radio" name="size" id="singleSize" value="single">
-                                    <label for="singleSize">
-                                        <span class="d-block mb-2 layout-img">
-                                        <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                            <img src="assets/img/theme/single.svg" alt="img">
-                                        </span>                                    
-                                        <span class="layout-type">Single</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="theme-layout mb-3">
-                                    <input type="radio" name="size" id="compactSize" value="compact">
-                                    <label for="compactSize">
-                                        <span class="d-block mb-2 layout-img">
-                                        <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                            <img src="assets/img/theme/mini.svg" alt="img">
-                                        </span>                                    
-                                        <span class="layout-type">Compact</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#colorsetting" aria-expanded="true">
-                        Top Bar Color <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
-                    </button>
-                </h2>
-                <div id="colorsetting" class="accordion-collapse collapse show">
-                    <div class="accordion-body pb-1">
-                     <div class="theme-content">
-                     <h6 class="fs-14 fw-medium mb-2">Solid Colors</h6>
-                       <div class="d-flex align-items-center flex-wrap topbar-background">
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="whiteTopbar" value="white" checked>
-                                <label for="whiteTopbar" class="white-topbar">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="topbar1Topbar" value="topbar1">
-                                <label for="topbar1Topbar" class="bg-light"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
-                            </div>
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="topbar2Topbar" value="topbar2">
-                                <label for="topbar2Topbar" class="bg-dark"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
-                            </div>
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="topbar3Topbar" value="topbar3">
-                                <label for="topbar3Topbar" class="bg-primary"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
-                            </div>
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="topbar4Topbar" value="topbar4">
-                                <label for="topbar4Topbar" class="bg-secondary"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
-                            </div>                   
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="topbar5Topbar" value="topbar5">
-                                <label for="topbar5Topbar" class="bg-info"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
-                            </div>                   
-                            <div class="theme-colorselect mb-3">
-                                <input type="radio" name="topbar" id="topbar6Topbar" value="topbar6">
-                                <label for="topbar6Topbar" class="bg-success"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
-                            </div> 
-                        </div>
-                        <h6 class="fs-14 fw-medium mb-2">Gradient Colors</h6>
-                       <div class="d-flex align-items-center flex-wrap topbar-background">
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="gradienttopbar1Topbar" value="gradienttopbar1">
-                                <label for="gradienttopbar1Topbar" class="bg-primary bg-gradient">
-                                    <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                </label>
-                            </div>
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="gradienttopbar2Topbar" value="gradienttopbar2">
-                                <label for="gradienttopbar2Topbar" class="bg-secondary bg-gradient "><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
-                            </div>
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="gradienttopbar3Topbar" value="gradienttopbar3">
-                                <label for="gradienttopbar3Topbar" class="bg-success bg-gradient"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
-                            </div>
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="gradienttopbar4Topbar" value="gradienttopbar4">
-                                <label for="gradienttopbar4Topbar" class="bg-info bg-gradient"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
-                            </div>
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="gradienttopbar5Topbar" value="gradienttopbar5">
-                                <label for="gradienttopbar5Topbar" class="bg-dark bg-gradient"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
-                            </div>                   
-                            <div class="theme-colorselect mb-3 me-3">
-                                <input type="radio" name="topbar" id="gradienttopbar6Topbar" value="gradienttopbar6">
-                                <label for="gradienttopbar6Topbar" class="bg-danger bg-gradient"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
-                            </div>                  
-                        </div>
-                    </div>
-                 </div>
-                </div>
-            </div>      
+// let themesettings = `
+// <div class="sidebar-contact ">
+//     <div class="toggle-theme"  data-bs-toggle="offcanvas" data-bs-target="#theme-setting">
+//         <i class="fa-solid fa-gear ti-spin"></i></div>
+//     </div>
+//     <div class="sidebar-themesettings offcanvas offcanvas-end" id="theme-setting">
+//     <div class="offcanvas-header d-flex align-items-center justify-content-between bg-primary">
+//         <div>
+//             <h6 class="text-white mb-0">Theme Customizer</h6>
+//         </div>
+//         <a href="#" class="close d-flex align-items-center justify-content-center"  data-bs-dismiss="offcanvas"><i class="isax isax-close-circle"></i></a>
+//     </div>
+//     <div class="themesettings-inner offcanvas-body">
+//         <div class="accordion accordion-customicon1 accordions-items-seperate" id="settingtheme">
+//             <div class="accordion-item">
+//                 <h2 class="accordion-header">
+//                     <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#layoutsetting" aria-expanded="true" aria-controls="collapsecustomicon1One">
+//                         Select Layouts <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
+//                     </button>
+//                 </h2>
+//                 <div id="layoutsetting" class="accordion-collapse collapse show">
+//                     <div class="accordion-body">
+//                      <div class="theme-content">
+//                         <div class="row gx-3">
+//                             <div class="col-4">
+//                                 <div class="theme-layout mb-3">
+//                                     <input type="radio" name="LayoutTheme" id="defaultLayout" value="default" checked>
+//                                     <label for="defaultLayout">
+//                                         <span class="d-block mb-2 layout-img">
+//                                             <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                             <img src="assets/img/theme/default.svg" alt="img">
+//                                         </span>                                     
+//                                         <span class="layout-type">Default</span>
+//                                     </label>
+//                                 </div>
+//                             </div>
+//                              <div class="col-4">
+//                                 <div class="theme-layout mb-3">
+//                                     <input type="radio" name="LayoutTheme" id="singleLayout" value="single">
+//                                     <label for="singleLayout">
+//                                         <span class="d-block mb-2 layout-img">
+//                                         <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                             <img src="assets/img/theme/single.svg" alt="img">
+//                                         </span>                                    
+//                                         <span class="layout-type">Single</span>
+//                                     </label>
+//                                 </div>
+//                             </div>
+//                             <div class="col-4">
+//                                 <div class="theme-layout mb-3">
+//                                     <input type="radio" name="LayoutTheme" id="miniLayout" value="mini">
+//                                     <label for="miniLayout">
+//                                         <span class="d-block mb-2 layout-img">
+//                                         <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                             <img src="assets/img/theme/mini.svg" alt="img">
+//                                         </span>                                    
+//                                         <span class="layout-type">Mini</span>
+//                                     </label>
+//                                 </div>
+//                             </div>
+//                             <div class="col-4">
+//                                 <div class="theme-layout mb-3">
+//                                     <input type="radio" name="LayoutTheme" id="transparentLayout" value="transparent">
+//                                     <label for="transparentLayout">
+//                                         <span class="d-block mb-2 layout-img">
+//                                         <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                             <img src="assets/img/theme/transparent.svg" alt="img">
+//                                         </span>                                    
+//                                         <span class="layout-type">Transparent</span>
+//                                     </label>
+//                                 </div>
+//                             </div>
+//                             <div class="col-4">
+//                                 <div class="theme-layout mb-3">
+//                                     <input type="radio" name="LayoutTheme" id="without-headerLayout" value="without-header">
+//                                     <label for="without-headerLayout">
+//                                         <span class="d-block mb-2 layout-img">
+//                                         <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                             <img src="assets/img/theme/without-header.svg" alt="img">
+//                                         </span>                                    
+//                                         <span class="layout-type">Without Header</span>
+//                                     </label>
+//                                 </div>
+//                             </div>
+//                             <div class="col-4">
+//                                 <a href="layout-rtl.html" class="theme-layout mb-3 text-center">
+//                                     <span class="d-block mb-2 layout-img">
+//                                         <img src="assets/img/theme/rtl.svg" alt="img">
+//                                     </span>                                    
+//                                     <span class="layout-type d-block">RTL</span>
+//                                 </a>
+//                             </div>
+//                         </div>
+//                     </div>
+//                     </div>
+//                 </div>
+//             </div> 
+//             <div class="accordion-item">
+//                 <h2 class="accordion-header">
+//                     <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarsetting" aria-expanded="true">
+//                         Layout Width <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
+//                     </button>
+//                 </h2>
+//                 <div id="sidebarsetting" class="accordion-collapse collapse show">
+//                     <div class="accordion-body">
+//                       <div class="theme-content">
+//                         <div class="d-flex align-items-center">
+//                             <div class="theme-width m-1 me-2">
+//                                 <input type="radio" name="width" id="fluidWidth" value="fluid" checked>
+//                                 <label for="fluidWidth" class="d-flex align-items-center rounded fs-12"><i class="isax isax-row-vertical me-1"></i>Fluid Layout
+//                                 </label>
+//                             </div>
+//                             <div class="theme-width m-1">
+//                                 <input type="radio" name="width" id="boxWidth" value="box">
+//                                 <label for="boxWidth" class="d-flex align-items-center rounded fs-12"><i class="isax isax-slider-vertical me-1"></i>Boxed Layout
+//                                 </label>
+//                             </div>
+//                         </div>  
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//             <div class="accordion-item">
+//                 <h2 class="accordion-header">
+//                     <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarcolorsetting" aria-expanded="true">
+//                         Sidebar Color <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
+//                     </button>
+//                 </h2>
+//                 <div id="sidebarcolorsetting" class="accordion-collapse collapse show">
+//                     <div class="accordion-body">
+//                      <div class="theme-content">
+//                      <h6 class="fs-14 fw-medium mb-2">Solid Colors</h6>
+//                        <div class="d-flex align-items-center flex-wrap">
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="lightSidebar" value="light" checked>
+//                                 <label for="lightSidebar" class="d-block rounded mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="sidebar2Sidebar" value="sidebar2">
+//                                 <label for="sidebar2Sidebar" class="d-block rounded bg-white mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="sidebar3Sidebar" value="sidebar3">
+//                                 <label for="sidebar3Sidebar" class="d-block rounded bg-dark mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="sidebar4Sidebar" value="sidebar4">
+//                                 <label for="sidebar4Sidebar" class="d-block rounded bg-primary mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="sidebar5Sidebar" value="sidebar5">
+//                                 <label for="sidebar5Sidebar" class="d-block rounded bg-secondary mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="sidebar6Sidebar" value="sidebar6">
+//                                 <label for="sidebar6Sidebar" class="d-block rounded bg-info mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>    
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="sidebar7Sidebar" value="sidebar7">
+//                                 <label for="sidebar7Sidebar" class="d-block rounded bg-success mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>      
+//                         </div>
+//                         <h6 class="fs-14 fw-medium mb-2">Gradient Colors</h6>
+//                        <div class="d-flex align-items-center flex-wrap">
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="gradientsidebar1Sidebar" value="gradientsidebar1">
+//                                 <label for="gradientsidebar1Sidebar" class="d-block rounded bg-primary bg-gradient mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="gradientsidebar2Sidebar" value="gradientsidebar2">
+//                                 <label for="gradientsidebar2Sidebar" class="d-block rounded bg-secondary bg-gradient mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="gradientsidebar3Sidebar" value="gradientsidebar3">
+//                                 <label for="gradientsidebar3Sidebar" class="d-block rounded bg-success bg-gradient mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="gradientsidebar4Sidebar" value="gradientsidebar4">
+//                                 <label for="gradientsidebar4Sidebar" class="d-block rounded bg-info bg-gradient mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="gradientsidebar5Sidebar" value="gradientsidebar5">
+//                                 <label for="gradientsidebar5Sidebar" class="d-block rounded bg-dark bg-gradient mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect m-1 me-2">
+//                                 <input type="radio" name="sidebar" id="gradientsidebar6Sidebar" value="gradientsidebar6">
+//                                 <label for="gradientsidebar6Sidebar" class="d-block rounded bg-danger bg-gradient mb-2">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>    
+//                         </div>
+//                     </div>
+//                     </div>
+//                 </div>
+//             </div>    
+//             <div class="accordion-item">
+//                 <h2 class="accordion-header">
+//                     <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#sizesetting" aria-expanded="true" aria-controls="collapsecustomicon1One">
+//                         Sidebar Size <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
+//                     </button>
+//                 </h2>
+//                 <div id="sizesetting" class="accordion-collapse collapse show">
+//                     <div class="accordion-body pb-0">
+//                      <div class="theme-content">
+//                         <div class="row gx-3">
+//                             <div class="col-4">
+//                                 <div class="theme-layout mb-3">
+//                                     <input type="radio" name="size" id="defaultSize" value="default" checked>
+//                                     <label for="defaultSize">
+//                                         <span class="d-block mb-2 layout-img">
+//                                         <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                             <img src="assets/img/theme/default.svg" alt="img">
+//                                         </span>                                     
+//                                         <span class="layout-type">Default</span>
+//                                     </label>
+//                                 </div>
+//                             </div>
+//                             <div class="col-4">
+//                                 <div class="theme-layout mb-3">
+//                                     <input type="radio" name="size" id="singleSize" value="single">
+//                                     <label for="singleSize">
+//                                         <span class="d-block mb-2 layout-img">
+//                                         <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                             <img src="assets/img/theme/single.svg" alt="img">
+//                                         </span>                                    
+//                                         <span class="layout-type">Single</span>
+//                                     </label>
+//                                 </div>
+//                             </div>
+//                             <div class="col-4">
+//                                 <div class="theme-layout mb-3">
+//                                     <input type="radio" name="size" id="compactSize" value="compact">
+//                                     <label for="compactSize">
+//                                         <span class="d-block mb-2 layout-img">
+//                                         <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                             <img src="assets/img/theme/mini.svg" alt="img">
+//                                         </span>                                    
+//                                         <span class="layout-type">Compact</span>
+//                                     </label>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                     </div>
+//                 </div>
+//             </div>
+//             <div class="accordion-item">
+//                 <h2 class="accordion-header">
+//                     <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#colorsetting" aria-expanded="true">
+//                         Top Bar Color <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
+//                     </button>
+//                 </h2>
+//                 <div id="colorsetting" class="accordion-collapse collapse show">
+//                     <div class="accordion-body pb-1">
+//                      <div class="theme-content">
+//                      <h6 class="fs-14 fw-medium mb-2">Solid Colors</h6>
+//                        <div class="d-flex align-items-center flex-wrap topbar-background">
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="whiteTopbar" value="white" checked>
+//                                 <label for="whiteTopbar" class="white-topbar">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="topbar1Topbar" value="topbar1">
+//                                 <label for="topbar1Topbar" class="bg-light"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
+//                             </div>
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="topbar2Topbar" value="topbar2">
+//                                 <label for="topbar2Topbar" class="bg-dark"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
+//                             </div>
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="topbar3Topbar" value="topbar3">
+//                                 <label for="topbar3Topbar" class="bg-primary"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
+//                             </div>
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="topbar4Topbar" value="topbar4">
+//                                 <label for="topbar4Topbar" class="bg-secondary"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
+//                             </div>                   
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="topbar5Topbar" value="topbar5">
+//                                 <label for="topbar5Topbar" class="bg-info"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
+//                             </div>                   
+//                             <div class="theme-colorselect mb-3">
+//                                 <input type="radio" name="topbar" id="topbar6Topbar" value="topbar6">
+//                                 <label for="topbar6Topbar" class="bg-success"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
+//                             </div> 
+//                         </div>
+//                         <h6 class="fs-14 fw-medium mb-2">Gradient Colors</h6>
+//                        <div class="d-flex align-items-center flex-wrap topbar-background">
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="gradienttopbar1Topbar" value="gradienttopbar1">
+//                                 <label for="gradienttopbar1Topbar" class="bg-primary bg-gradient">
+//                                     <span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                 </label>
+//                             </div>
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="gradienttopbar2Topbar" value="gradienttopbar2">
+//                                 <label for="gradienttopbar2Topbar" class="bg-secondary bg-gradient "><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
+//                             </div>
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="gradienttopbar3Topbar" value="gradienttopbar3">
+//                                 <label for="gradienttopbar3Topbar" class="bg-success bg-gradient"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
+//                             </div>
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="gradienttopbar4Topbar" value="gradienttopbar4">
+//                                 <label for="gradienttopbar4Topbar" class="bg-info bg-gradient"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
+//                             </div>
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="gradienttopbar5Topbar" value="gradienttopbar5">
+//                                 <label for="gradienttopbar5Topbar" class="bg-dark bg-gradient"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
+//                             </div>                   
+//                             <div class="theme-colorselect mb-3 me-3">
+//                                 <input type="radio" name="topbar" id="gradienttopbar6Topbar" value="gradienttopbar6">
+//                                 <label for="gradienttopbar6Topbar" class="bg-danger bg-gradient"><span class="theme-check rounded-circle"><i class="fa-solid fa-check"></i></span></label>
+//                             </div>                  
+//                         </div>
+//                     </div>
+//                  </div>
+//                 </div>
+//             </div>      
 		    
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarbgsetting" aria-expanded="true">
-                        Sidebar Background <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
-                    </button>
-                </h2>
-                <div id="sidebarbgsetting" class="accordion-collapse collapse show">
-                    <div class="accordion-body pb-1">
-                     <div class="theme-content">
-                     <h6 class="fs-14 fw-medium mb-2">Pattern</h6>
-                       <div class="d-flex align-items-center flex-wrap">
-                            <div class="theme-sidebarbg me-3 mb-3">                            
+//             <div class="accordion-item">
+//                 <h2 class="accordion-header">
+//                     <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarbgsetting" aria-expanded="true">
+//                         Sidebar Background <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
+//                     </button>
+//                 </h2>
+//                 <div id="sidebarbgsetting" class="accordion-collapse collapse show">
+//                     <div class="accordion-body pb-1">
+//                      <div class="theme-content">
+//                      <h6 class="fs-14 fw-medium mb-2">Pattern</h6>
+//                        <div class="d-flex align-items-center flex-wrap">
+//                             <div class="theme-sidebarbg me-3 mb-3">                            
                            
-                                <input type="radio" name="sidebarbg" id="sidebarBg1" value="sidebarbg1">
-                                <label for="sidebarBg1" class="d-block rounded">
-                                 <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                    <img src="assets/img/theme/sidebar-bg-01.svg" alt="img" class="rounded">
-                                </label>
-                            </div>
-                            <div class="theme-sidebarbg me-3 mb-3">
-                                <input type="radio" name="sidebarbg" id="sidebarBg2" value="sidebarbg2">
-                                <label for="sidebarBg2" class="d-block rounded">
-                                 <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                    <img src="assets/img/theme/sidebar-bg-02.svg" alt="img" class="rounded">
-                                </label>
-                            </div>
-                            <div class="theme-sidebarbg me-3 mb-3">
-                                <input type="radio" name="sidebarbg" id="sidebarBg3" value="sidebarbg3">
-                                <label for="sidebarBg3" class="d-block rounded">
-                                 <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                    <img src="assets/img/theme/sidebar-bg-03.svg" alt="img" class="rounded">
-                                </label>
-                            </div>
-                            <div class="theme-sidebarbg me-3 mb-3">
-                                <input type="radio" name="sidebarbg" id="sidebarBg4" value="sidebarbg4">
-                                <label for="sidebarBg4" class="d-block rounded">
-                                 <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                    <img src="assets/img/theme/sidebar-bg-04.svg" alt="img" class="rounded">
-                                </label>
-                            </div>
-                            <div class="theme-sidebarbg me-3 mb-3">
-                                <input type="radio" name="sidebarbg" id="sidebarBg5" value="sidebarbg5">
-                                <label for="sidebarBg5" class="d-block rounded">
-                                 <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                    <img src="assets/img/theme/sidebar-bg-05.svg" alt="img" class="rounded">
-                                </label>
-                            </div>
-                            <div class="theme-sidebarbg mb-3">
-                                <input type="radio" name="sidebarbg" id="sidebarBg6" value="sidebarbg6">
-                                <label for="sidebarBg6" class="d-block rounded">
-                                 <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
-                                    <img src="assets/img/theme/sidebar-bg-06.svg" alt="img" class="rounded">
-                                </label>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-            </div>    
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarcolor" aria-expanded="true">
-                        Theme Colors <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
-                    </button>
-                </h2>
-                <div id="sidebarcolor" class="accordion-collapse collapse show">
-                    <div class="accordion-body pb-2">
-                     <div class="theme-content">
-                       <div class="d-flex align-items-center flex-wrap">
-                            <div class="theme-colorsset me-2 mb-2">
-                                <input type="radio" name="color" id="primaryColor" value="primary" checked>
-                                <label for="primaryColor" class="primary-clr"></label>
-                            </div>
-                            <div class="theme-colorsset me-2 mb-2">
-                                <input type="radio" name="color" id="secondaryColor" value="secondary">
-                                <label for="secondaryColor" class="secondary-clr"></label>
-                            </div>
-                            <div class="theme-colorsset me-2 mb-2">
-                                <input type="radio" name="color" id="successColor" value="success">
-                                <label for="successColor" class="success-clr"></label>
-                            </div>
-                            <div class="theme-colorsset me-2 mb-2">
-                                <input type="radio" name="color" id="dangerColor" value="danger">
-                                <label for="dangerColor" class="danger-clr"></label>
-                            </div>
-                            <div class="theme-colorsset me-2 mb-2">
-                                <input type="radio" name="color" id="infoColor" value="info">
-                                <label for="infoColor" class="info-clr"></label>
-                            </div>
-                            <div class="theme-colorsset me-2 mb-2">
-                                <input type="radio" name="color" id="warningColor" value="warning">
-                                <label for="warningColor" class="warning-clr"></label>
-                            </div>  
-                        </div>
-                         </div>
-                    </div>
-                </div>
-            </div> 
-        </div> 
-    </div>
-        <div class="p-3 border-top">
-            <div class="row gx-3">
-                <div class="col-6">
-                    <a href="#" id="resetbutton" class="btn btn-light close-theme w-100"><i class="ti ti-restore me-1"></i>Reset</a>
-                </div>
-                <div class="col-6">
-                    <a href="#" class="btn btn-primary w-100" data-bs-dismiss="offcanvas"><i class="ti ti-shopping-cart-plus me-1"></i>Buy Product</a>
-                </div>
-            </div>
-        </div>    
-    </div> `
+//                                 <input type="radio" name="sidebarbg" id="sidebarBg1" value="sidebarbg1">
+//                                 <label for="sidebarBg1" class="d-block rounded">
+//                                  <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                     <img src="assets/img/theme/sidebar-bg-01.svg" alt="img" class="rounded">
+//                                 </label>
+//                             </div>
+//                             <div class="theme-sidebarbg me-3 mb-3">
+//                                 <input type="radio" name="sidebarbg" id="sidebarBg2" value="sidebarbg2">
+//                                 <label for="sidebarBg2" class="d-block rounded">
+//                                  <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                     <img src="assets/img/theme/sidebar-bg-02.svg" alt="img" class="rounded">
+//                                 </label>
+//                             </div>
+//                             <div class="theme-sidebarbg me-3 mb-3">
+//                                 <input type="radio" name="sidebarbg" id="sidebarBg3" value="sidebarbg3">
+//                                 <label for="sidebarBg3" class="d-block rounded">
+//                                  <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                     <img src="assets/img/theme/sidebar-bg-03.svg" alt="img" class="rounded">
+//                                 </label>
+//                             </div>
+//                             <div class="theme-sidebarbg me-3 mb-3">
+//                                 <input type="radio" name="sidebarbg" id="sidebarBg4" value="sidebarbg4">
+//                                 <label for="sidebarBg4" class="d-block rounded">
+//                                  <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                     <img src="assets/img/theme/sidebar-bg-04.svg" alt="img" class="rounded">
+//                                 </label>
+//                             </div>
+//                             <div class="theme-sidebarbg me-3 mb-3">
+//                                 <input type="radio" name="sidebarbg" id="sidebarBg5" value="sidebarbg5">
+//                                 <label for="sidebarBg5" class="d-block rounded">
+//                                  <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                     <img src="assets/img/theme/sidebar-bg-05.svg" alt="img" class="rounded">
+//                                 </label>
+//                             </div>
+//                             <div class="theme-sidebarbg mb-3">
+//                                 <input type="radio" name="sidebarbg" id="sidebarBg6" value="sidebarbg6">
+//                                 <label for="sidebarBg6" class="d-block rounded">
+//                                  <span class="theme-check2 rounded-circle"><i class="fa-solid fa-check"></i></span>
+//                                     <img src="assets/img/theme/sidebar-bg-06.svg" alt="img" class="rounded">
+//                                 </label>
+//                             </div>
+//                         </div>
+//                       </div>
+//                     </div>
+//                 </div>
+//             </div>    
+//             <div class="accordion-item">
+//                 <h2 class="accordion-header">
+//                     <button class="accordion-button text-gray-9 fw-semibold fs-16" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarcolor" aria-expanded="true">
+//                         Theme Colors <i class="ti ti-circle-chevron-up ms-auto text-primary"></i>
+//                     </button>
+//                 </h2>
+//                 <div id="sidebarcolor" class="accordion-collapse collapse show">
+//                     <div class="accordion-body pb-2">
+//                      <div class="theme-content">
+//                        <div class="d-flex align-items-center flex-wrap">
+//                             <div class="theme-colorsset me-2 mb-2">
+//                                 <input type="radio" name="color" id="primaryColor" value="primary" checked>
+//                                 <label for="primaryColor" class="primary-clr"></label>
+//                             </div>
+//                             <div class="theme-colorsset me-2 mb-2">
+//                                 <input type="radio" name="color" id="secondaryColor" value="secondary">
+//                                 <label for="secondaryColor" class="secondary-clr"></label>
+//                             </div>
+//                             <div class="theme-colorsset me-2 mb-2">
+//                                 <input type="radio" name="color" id="successColor" value="success">
+//                                 <label for="successColor" class="success-clr"></label>
+//                             </div>
+//                             <div class="theme-colorsset me-2 mb-2">
+//                                 <input type="radio" name="color" id="dangerColor" value="danger">
+//                                 <label for="dangerColor" class="danger-clr"></label>
+//                             </div>
+//                             <div class="theme-colorsset me-2 mb-2">
+//                                 <input type="radio" name="color" id="infoColor" value="info">
+//                                 <label for="infoColor" class="info-clr"></label>
+//                             </div>
+//                             <div class="theme-colorsset me-2 mb-2">
+//                                 <input type="radio" name="color" id="warningColor" value="warning">
+//                                 <label for="warningColor" class="warning-clr"></label>
+//                             </div>  
+//                         </div>
+//                          </div>
+//                     </div>
+//                 </div>
+//             </div> 
+//         </div> 
+//     </div>
+//         <div class="p-3 border-top">
+//             <div class="row gx-3">
+//                 <div class="col-6">
+//                     <a href="#" id="resetbutton" class="btn btn-light close-theme w-100"><i class="ti ti-restore me-1"></i>Reset</a>
+//                 </div>
+//                 <div class="col-6">
+//                     <a href="#" class="btn btn-primary w-100" data-bs-dismiss="offcanvas"><i class="ti ti-shopping-cart-plus me-1"></i>Buy Product</a>
+//                 </div>
+//             </div>
+//         </div>    
+//     </div> `
     
     document.addEventListener("DOMContentLoaded", function() {
 
-    document.body.insertAdjacentHTML('beforeend', themesettings);
+    // document.body.insertAdjacentHTML('beforeend', themesettings);
 
     const darkModeToggle = document.getElementById("dark-mode-toggle");
 	const lightModeToggle = document.getElementById("light-mode-toggle");

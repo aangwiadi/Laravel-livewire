@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/apple-touch-icon.png') }}">
 
     {{-- Theme Script (must load before paint to avoid theme flash) --}}
-    {{-- <script src="{{ asset('assets/js/theme-script.js') }}"></script> --}}
+    <script src="{{ asset('assets/js/theme-script.js') }}"></script>
 
     {{-- Core CSS --}}
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">

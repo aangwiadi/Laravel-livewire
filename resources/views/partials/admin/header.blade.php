@@ -5,10 +5,10 @@
         {{-- Logo --}}
         <div class="header-left">
             <a href="{{ url('/') }}" class="logo">
-                <img src="{{ asset('assets/img/logo.svg') }}" alt="Logo">
+                <img src="{{ asset('assets/img/logo.png') }}" height="30px" alt="Logo">
             </a>
             <a href="{{ url('/') }}" class="dark-logo">
-                <img src="{{ asset('assets/img/logo-white.svg') }}" alt="Logo">
+                <img src="{{ asset('assets/img/logo.png') }}" height="30px" alt="Logo">
             </a>
         </div>
 

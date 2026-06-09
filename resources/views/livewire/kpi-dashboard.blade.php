@@ -107,7 +107,7 @@
 
     {{-- Secondary detail cards --}}
     <div class="row">
-        <div class="col-sm-6 col-xl-3 d-flex">
+        <div class="col-sm-6 col-xl-6 d-flex">
             <div class="card flex-fill">
                 <div class="card-body">
                     <p class="mb-1">Total HPP</p>
@@ -115,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-xl-3 d-flex">
+        {{-- <div class="col-sm-6 col-xl-3 d-flex">
             <div class="card flex-fill">
                 <div class="card-body">
                     <p class="mb-1">Total DPP</p>
@@ -130,8 +130,8 @@
                     <h6 class="fs-16 fw-semibold mb-0">Rp {{ number_format($s->total_ppn, 0, ',', '.') }}</h6>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6 col-xl-3 d-flex">
+        </div> --}}
+        <div class="col-sm-6 col-xl-6 d-flex">
             <div class="card flex-fill">
                 <div class="card-body">
                     <p class="mb-1">Avg / Transaksi</p>
@@ -176,7 +176,7 @@
         <div class="col-xl-8 d-flex">
             <div class="card flex-fill">
                 <div class="card-header">
-                    <h5 class="card-title mb-0">Performa 5 Toko Terbaik</h5>
+                    <h5 class="card-title mb-0">Performa 5 KDKMP Terbaik</h5>
                 </div>
                 <div class="card-body">
                     <div wire:ignore>
@@ -190,7 +190,7 @@
         <div class="col-xl-4 d-flex">
             <div class="card flex-fill">
                 <div class="card-header">
-                    <h5 class="card-title mb-0">Distribusi Margin Toko</h5>
+                    <h5 class="card-title mb-0">Distribusi Margin KDKMP</h5>
                 </div>
                 <div class="card-body">
                     <div wire:ignore>
@@ -206,7 +206,7 @@
         <div class="col-12 d-flex">
             <div class="card flex-fill">
                 <div class="card-header">
-                    <h5 class="card-title mb-0">Omset 5 Toko Terbaik</h5>
+                    <h5 class="card-title mb-0">Omset 5 KDKMP Terbaik</h5>
                 </div>
                 <div class="card-body">
                     <div wire:ignore>
@@ -223,7 +223,7 @@
         <div class="col-12 d-flex">
             <div class="card flex-fill">
                 <div class="card-header d-flex align-items-center justify-content-between flex-wrap gap-2">
-                    <h5 class="card-title mb-0">Breakdown KPI per Toko</h5>
+                    <h5 class="card-title mb-0">Breakdown KPI per KDKMP</h5>
                     <div class="d-flex align-items-center gap-2">
                         <span class="fs-13 text-muted">Show</span>
                         <select wire:model.live="perPage" class="form-select form-select-sm" style="width: auto;">
@@ -242,7 +242,7 @@
                                     <th style="width: 60px;">#</th>
                                     @php
                                         $columns = [
-                                            'name' => 'Toko',
+                                            'name' => 'KDKMP',
                                             'city' => 'Kota',
                                             'omset' => 'Omset',
                                             'total_hpp' => 'HPP',
